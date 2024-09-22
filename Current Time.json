@@ -1,0 +1,22 @@
+[
+    {
+        "id": "timezone-function",
+        "type": "function",
+        "z": "05292ea072a67f33",
+        "name": "Map TimeZone",
+        "func": "// Replace the 'msg.zone' with the zone that the user selects\nlet selectedZone = msg.payload;\n\n// Construct the API URL\nlet apiKey = \"6T2NTUCR72F8\"; // Your API key\nlet apiURL = `https://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=zone&zone=${selectedZone}`;\n\n// Set up the HTTP request parameters\nmsg.url = apiURL;    // API URL\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "http-request"
+            ]
+        ]
+    }
+]
